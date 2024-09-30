@@ -2,7 +2,7 @@
   "name": "ip-rmt-53-server",
   "version": "1.0.0",
   "description": "Individual Project RMT-53 Server Side",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
