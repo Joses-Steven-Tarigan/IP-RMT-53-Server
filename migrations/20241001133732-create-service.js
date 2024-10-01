@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Collects', {
+    await queryInterface.createTable('Services', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -24,8 +24,8 @@ module.exports = {
       imageUrl: {
         type: Sequelize.TEXT
       },
-      categoryId: {
-        type: Sequelize.INTEGER
+      type: {
+        type: Sequelize.STRING
       },
       amount: {
         type: Sequelize.INTEGER
@@ -41,6 +41,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Collects');
+    await queryInterface.dropTable('Services');
   }
 };
