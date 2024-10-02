@@ -35,15 +35,15 @@ exports.getServiceById = async (req, res, next) => {
 }
 
 exports.putServiceById = async (req, res, next) => {
-    let { title, content, imgUrl, categoryId, AuthorId } = req.body
+    let { name, region, price, description, imageUrl, type } = req.body
     let { id } = req.params
     try {
-        let posts = await Post.findByPk(id)
-        if (!posts) throw { name: "NotFound" }
-        await Post.update({ title, content, imgUrl, categoryId, AuthorId }, {
+        let services = await Service.findByPk(id)
+        if (!services) throw { name: "NotFound" }
+        await Service.update({ name, region, price, description, imageUrl, type }, {
             where:  {id}
         })
-        res.status(201).json({ message: 'Post has been updated' })
+        res.status(201).json({ message: 'Service has been updated' })
     } catch (error) {
         next(error)
     }
